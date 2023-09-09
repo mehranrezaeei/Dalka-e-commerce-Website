@@ -5,7 +5,7 @@ const icons = {
       aria-hidden="true"
       focusable="false"
       role="presentation"
-      class="icon icon-hamburger"
+      className="icon icon-hamburger"
       fill="none"
       viewBox="0 0 18 16"
     >
@@ -18,17 +18,33 @@ const icons = {
   exitIcon: (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      focusable="false"
-      role="presentation"
-      class="icon icon-close"
       fill="none"
-      viewBox="0 0 18 17"
+      viewBox="0 0 24 24"
+      strokeWidth="1.2"
+      stroke="currentColor"
+      className="w-6 h-6"
     >
       <path
-        d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z"
-        fill="currentColor"
-      ></path>
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M6 18L18 6M6 6l12 12"
+      />
+    </svg>
+  ),
+  searchIcon: (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.2"
+      stroke="currentColor"
+      className="w-6 h-6"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+      />
     </svg>
   ),
   rightArrowIcon: (
@@ -39,7 +55,7 @@ const icons = {
       aria-hidden="true"
       focusable="false"
       role="presentation"
-      class="icon icon-arrow"
+      className="icon icon-arrow"
     >
       <path
         fill-rule="evenodd"
@@ -51,44 +67,43 @@ const icons = {
   ),
   subBottomIcon: (
     <svg
-      aria-hidden="true"
-      focusable="false"
-      role="presentation"
-      class="icon icon-caret"
-      viewBox="0 0 10 6"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.2"
+      stroke="currentColor"
+      className="w-4 h-4"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
-        fill="currentColor"
-      ></path>
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+      />
     </svg>
   ),
   accountsIcon: (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      focusable="false"
-      role="presentation"
-      class="icon icon-account"
       fill="none"
-      viewBox="0 0 18 19"
+      viewBox="0 0 24 24"
+      strokeWidth="1.2"
+      stroke="currentColor"
+      className="w-6 h-6"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M6 4.5a3 3 0 116 0 3 3 0 01-6 0zm3-4a4 4 0 100 8 4 4 0 000-8zm5.58 12.15c1.12.82 1.83 2.24 1.91 4.85H1.51c.08-2.6.79-4.03 1.9-4.85C4.66 11.75 6.5 11.5 9 11.5s4.35.26 5.58 1.15zM9 10.5c-2.5 0-4.65.24-6.17 1.35C1.27 12.98.5 14.93.5 18v.5h17V18c0-3.07-.77-5.02-2.33-6.15-1.52-1.1-3.67-1.35-6.17-1.35z"
-        fill="currentColor"
-      ></path>
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+      />
     </svg>
   ),
   instagramIcon: (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       focusable="false"
       role="presentation"
-      class="icon icon-instagram"
+      className="icon icon-instagram"
       viewBox="0 0 18 18"
     >
       <path
@@ -104,24 +119,23 @@ const icons = {
   shoppingCartIcon: (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="icon icon-cart"
-      aria-hidden="true"
-      focusable="false"
-      role="presentation"
-      viewBox="0 0 40 40"
       fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.2"
+      stroke="currentColor"
+      className="w-6 h-6"
     >
       <path
-        fill="currentColor"
-        fill-rule="evenodd"
-        d="M20.5 6.5a4.75 4.75 0 00-4.75 4.75v.56h-3.16l-.77 11.6a5 5 0 004.99 5.34h7.38a5 5 0 004.99-5.33l-.77-11.6h-3.16v-.57A4.75 4.75 0 0020.5 6.5zm3.75 5.31v-.56a3.75 3.75 0 10-7.5 0v.56h7.5zm-7.5 1h7.5v.56a3.75 3.75 0 11-7.5 0v-.56zm-1 0v.56a4.75 4.75 0 109.5 0v-.56h2.22l.71 10.67a4 4 0 01-3.99 4.27h-7.38a4 4 0 01-4-4.27l.72-10.67h2.22z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
       />
     </svg>
   ),
   doneIcon: (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="icon icon-checkmark color-foreground-text"
+      className="icon icon-checkmark color-foreground-text"
       aria-hidden="true"
       focusable="false"
       viewBox="0 0 12 9"

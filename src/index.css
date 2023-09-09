@@ -10,3 +10,21 @@
     font-family: "Poppins", sans-serif;
   }
 }
+
+@layer components {
+  .Ccontainer {
+    @apply sm:px-14 px-6;
+  }
+  .Cheader {
+    background-image: url("assets//images/dalka-logo.svg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    @apply w-full min-h-screen;
+  }
+  .CheaderImgContainer {
+    @apply before:w-10 top-0 left-0 before:h-10 before:border-t-[4px] before:border-l-[4px] before:absolute relative before:border-l-Cblue before:border-t-Cblue before:bg-transparent    after:w-10 after:bottom-0 after:right-0 after:h-10 after:border-b-[4px] after:border-r-[4px] after:absolute  after:border-r-Cblue after:border-b-Cblue after:bg-transparent;
+  }
+  .CscrollNavDeActive {
+    @apply translate-y-[-80px];
+  }
+}
