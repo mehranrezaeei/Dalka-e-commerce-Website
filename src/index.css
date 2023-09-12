@@ -11,6 +11,12 @@
   }
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 @layer components {
   .Ccontainer {
     @apply sm:px-14 px-6;
@@ -26,5 +32,8 @@
   }
   .CscrollNavDeActive {
     @apply translate-y-[-80px];
+  }
+  .CsecYmargin {
+    @apply sm:my-10 my-7;
   }
 }

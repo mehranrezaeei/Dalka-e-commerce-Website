@@ -4,7 +4,7 @@ import headerImg from "../assets/images/header-pic.png";
 import { Link } from "react-router-dom";
 const Header = () => {
   return (
-    <header className=" w-full min-h-screen">
+    <header className=" w-full min-h-screen bg-white top-0 ">
       <Navbar />
       <div className="flex justify-between Ccontainer z-[10] pt-[85px]">
         <div className="flex flex-col justify-center max-w-[50%]">

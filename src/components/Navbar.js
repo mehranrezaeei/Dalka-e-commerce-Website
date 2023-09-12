@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import icons from "../assets/icons/icons";
 import { navbarScrollController } from "./helpers/funtion";
@@ -8,6 +8,7 @@ const Navbar = () => {
     aboutUs: false,
     search: false,
   });
+  const searchInp = useRef();
   useEffect(() => {
     navbarScrollController();
   }, []);
@@ -96,7 +97,10 @@ const Navbar = () => {
         {/* Search Icon */}
         <span
           className="cursor-pointer"
-          onClick={() => setshowStatus({ search: !showStatus.search })}
+          onClick={() => {
+            setshowStatus({ search: !showStatus.search });
+            searchInp.current.focus();
+          }}
         >
           {icons.searchIcon}
           {console.log(showStatus.search)}
@@ -111,7 +115,8 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Search"
-              className="h-8 w-auto sm:min-w-[20rem] px-3 font-200 bg-transparent outline-none "
+              ref={searchInp}
+              className="h-8  w-auto sm:min-w-[20rem] px-3 font-200 bg-transparent outline-none "
             />
             <span className="p-1 cursor-pointer">{icons.searchIcon}</span>
           </div>
