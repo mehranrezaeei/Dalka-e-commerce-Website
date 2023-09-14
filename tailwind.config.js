@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
+      screens: {
+        xs: "550px",
+      },
       keyframes: {
         "side-mover": {
           "0% ,100%": { left: "0%" },

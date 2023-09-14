@@ -19,7 +19,7 @@
 
 @layer components {
   .Ccontainer {
-    @apply sm:px-14 px-6;
+    @apply sm:px-14 px-6 max-[450px]:px-3;
   }
   .Cheader {
     background-image: url("assets//images/dalka-logo.svg");

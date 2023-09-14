@@ -31,7 +31,7 @@ const Footer = () => {
                 return (
                   <li className="first:font-[600] first:pb-2 first:flex items-center first:gap-2">
                     <Link>{item}</Link>
-                    {index == 0 ? <span>{icons.arrowRight}</span> : ""}
+                    {index === 0 ? <span>{icons.arrowRight}</span> : ""}
                   </li>
                 );
               })}

@@ -6,9 +6,9 @@ const Header = () => {
   return (
     <header className=" w-full min-h-screen bg-white top-0 ">
       <Navbar />
-      <div className="flex justify-between Ccontainer z-[10] pt-[85px]">
-        <div className="flex flex-col justify-center max-w-[50%]">
-          <h1 className="text-[2.5rem] uppercase font-[600] mb-3">
+      <div className="flex sm:flex-row flex-col justify-between Ccontainer z-[10] pt-[85px]  min-h-[65vh] items-center">
+        <div className="flex flex-col justify-center max-w-full  sm:max-w-[50%] sm:order-1 order-2 ">
+          <h1 className="sm:text-[2.5rem] text-[2rem] uppercase font-[600] mb-3">
             Beauty , Quality , Specialness
           </h1>
           <p className="text-lg mb-6">
@@ -19,8 +19,13 @@ const Header = () => {
             Products
           </Link>
         </div>
-        <div className=" CheaderImgContainer">
-          <img src={headerImg} className="w-auto h-[600px]" alt="/" />
+
+        <div className="sm:CheaderImgContainer sm:order-2 order-1 xs:block flex justify-center">
+          <img
+            src={headerImg}
+            className="w-auto xs:h-[600px] h-[450px]"
+            alt="/"
+          />
         </div>
       </div>
     </header>

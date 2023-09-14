@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full h-[80px]  flex justify-between items-center Ccontainer py-4 z-[100] transition-transform duration-75">
       {/* Nav Menu Items */}
-      <div className="flex items-center text-[0.9rem] font-[300]">
+      <div className="flex items-center text-[0.9rem]  font-[300] w-52 ">
         {/* List Items */}
         <div className="relative flex">
           <Link
@@ -78,7 +78,7 @@ const Navbar = () => {
         </div>
       </div>
       {/* Logo */}
-      <div>
+      <Link to="/">
         <svg
           id="Layer_1"
           data-name="Layer 1"
@@ -91,9 +91,9 @@ const Navbar = () => {
             fill="#231f20"
           />
         </svg>
-      </div>
+      </Link>
       {/* Search , Account , Shopping Cart */}
-      <div className="flex items-center gap-5">
+      <div className="flex justify-end gap-5 w-52">
         {/* Search Icon */}
         <span
           className="cursor-pointer"
@@ -103,7 +103,6 @@ const Navbar = () => {
           }}
         >
           {icons.searchIcon}
-          {console.log(showStatus.search)}
         </span>
         {/* Search Box  */}
         <div
