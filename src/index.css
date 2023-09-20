@@ -15,6 +15,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 @layer components {
@@ -35,5 +36,8 @@
   }
   .CsecYmargin {
     @apply sm:my-10 my-7;
+  }
+  .CcardImgContainer:hover div:nth-child(2) {
+    @apply bottom-0;
   }
 }

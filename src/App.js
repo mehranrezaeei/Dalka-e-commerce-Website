@@ -8,6 +8,8 @@ import Footer from "./components/Footer";
 import Landing from "./components/Landing";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Products from "./components/Products";
+import ProductDetail from "./components/ProductDetail";
 // Components
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/productdetail/:id" element={<ProductDetail />} />
       </Routes>
     </div>
   );

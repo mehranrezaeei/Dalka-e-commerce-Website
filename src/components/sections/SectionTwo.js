@@ -8,11 +8,13 @@ import icons from "../../assets/icons/icons";
 
 const SectionTwo = () => {
   return (
-    <section className="CsecYmargin w-full min-h-screen Ccontainer">
+    <section className="CsecYmargin w-full xs:min-h-screen h-fit Ccontainer">
       <div className="my-10 flex justify-between items-center">
-        <h1 className="text-[3rem] font-[600]">Up to 50% Off</h1>
-        <div className="flex items-center gap-1">
-          <Link className="text-white bg-Cblue p-3 rounded-full outline outline-3 hover:outline-Cblue hover:outline-offset-2 transition-all duration-300">
+        <h1 className="sm:text-[3rem] xs:text-[2.5rem] text-[2rem] font-[600]">
+          Up to 50% Off
+        </h1>
+        <div className="flex items-center flex-wrap gap-1">
+          <Link className="text-white bg-Cblue xs:p-3 p-2 rounded-full outline outline-3 hover:outline-Cblue hover:outline-offset-2 transition-all duration-300">
             {icons.arrowUpRight}
           </Link>
         </div>

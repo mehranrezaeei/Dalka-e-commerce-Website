@@ -1,3 +1,4 @@
+import { ProductsData } from "../../assets/data/data";
 export const navbarScrollController = () => {
   const navbar = document.querySelector("nav");
   let lastScrollY = window.scrollY;

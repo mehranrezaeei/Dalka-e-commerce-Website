@@ -9,7 +9,7 @@ import logo from "../assets/images/dalka-logo.svg";
 const Footer = () => {
   return (
     <footer className="flex flex-col min-h-[60vh] justify-end">
-      <div className="flex justify-center items-center border-b gap-12 py-10 ">
+      <div className="flex justify-center items-center border-b sm:gap-12 gap-7  py-10 ">
         <Link className="hover:scale-[1.2] transition-all duration-300">
           {icons.twitterIcon}
         </Link>
@@ -23,10 +23,11 @@ const Footer = () => {
           {icons.youtubeIcon}
         </Link>
       </div>
+
       <div className="flex flex-wrap justify-between items-center py-20 Ccontainer bg-black text-white gap-3">
         {footerData.map((item) => {
           return (
-            <ul className="font-[300] flex sm:gap-4 gap-2">
+            <ul className="font-[300] flex sm:gap-4 gap-2 xs:flex-nowrap flex-wrap">
               {item.map((item, index) => {
                 return (
                   <li className="first:font-[600] first:pb-2 first:flex items-center first:gap-2">
