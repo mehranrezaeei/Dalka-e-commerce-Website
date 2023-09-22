@@ -15,3 +15,20 @@ export const navbarScrollController = () => {
     }
   };
 };
+
+export const isInItems = (state, id) => {
+  if (state.selectedItems.find((item) => item.id === id)) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+export const quantityCount = (state, id) => {
+  const finded = state.find((item) => item.id === id);
+  if (finded) {
+    return finded.quantity;
+  } else {
+    return 0;
+  }
+};

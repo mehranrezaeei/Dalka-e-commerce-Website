@@ -1,11 +1,21 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ProductsData } from "../assets/data/data";
 import icons from "../assets/icons/icons";
-
+// Dependency
+import {
+  AddItem,
+  RemoveItem,
+  Increase,
+  Decrease,
+} from "../features/shoppingCartSlice/shoppingCartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { quantityCount } from "./helpers/funtion";
 const ProductDetail = () => {
   const { id } = useParams();
   const [currentProduct, setcurrentProduct] = useState();
+  const selector = useSelector((state) => state.shoppingcart);
+  const Dispatch = useDispatch();
   useEffect(() => {
     ProductsData.Man.map((item) => {
       const productid = item.category + "-" + item.id;
@@ -14,6 +24,7 @@ const ProductDetail = () => {
       }
     });
   }, []);
+
   const starHandler = (value) => {
     let stars = [];
     for (let i = 1; i <= value; i++) {
@@ -24,7 +35,7 @@ const ProductDetail = () => {
   return (
     <div className="flex justify-center items-center">
       <div className="lg:w-[65%] md:w-[85%] sm:w-full mt-12">
-        <div className="flex items-center w-full sm:flex-row flex-col gap-10 bg-red-100">
+        <div className="flex items-center w-full sm:flex-row flex-col gap-10 ">
           {/* Image Side */}
           <div>
             <div className="flex flex-col gap-3">
@@ -85,10 +96,64 @@ const ProductDetail = () => {
             <div className="text-[2rem] mt-6">
               <span>{currentProduct && currentProduct.price} $</span>
             </div>
-            <div>
-              <button className="w-full py-2 rounded-sm bg-Cblue text-white text-lg">
-                Add to Cart
-              </button>
+            <div className="flex items-center">
+              {currentProduct &&
+                quantityCount(selector.selectedItems, currentProduct.id) ===
+                  0 && (
+                  <button
+                    className="w-full py-2 rounded-sm bg-Cblue text-white text-lg"
+                    onClick={() => {
+                      Dispatch(AddItem(currentProduct));
+                    }}
+                  >
+                    Add to Cart
+                  </button>
+                )}
+              <div className="flex rounded-full w-fit overflow-hidden bg-gray-100 shadow-md ">
+                {currentProduct &&
+                  quantityCount(selector.selectedItems, currentProduct.id) ===
+                    1 && (
+                    <button
+                      className="flex justify-center items-center w-10 h-10 hover:bg-red-500 hover:text-white transition-colors"
+                      onClick={() => {
+                        Dispatch(RemoveItem(currentProduct.id));
+                      }}
+                    >
+                      {icons.trashIcon("w-5 h-5")}
+                    </button>
+                  )}
+                {currentProduct &&
+                  quantityCount(selector.selectedItems, currentProduct.id) >
+                    1 && (
+                    <button
+                      className="flex justify-center items-center text-lg w-10  h-10 hover:bg-red-500 hover:text-white transition-colors"
+                      onClick={() => {
+                        Dispatch(Decrease(currentProduct.id));
+                      }}
+                    >
+                      -
+                    </button>
+                  )}
+                {currentProduct &&
+                  quantityCount(selector.selectedItems, currentProduct.id) >
+                    0 && (
+                    <span className="flex justify-center items-center w-10 h-10 ">
+                      {quantityCount(selector.selectedItems, currentProduct.id)}
+                    </span>
+                  )}
+                {currentProduct &&
+                  quantityCount(selector.selectedItems, currentProduct.id) >
+                    0 && (
+                    <button
+                      className="flex justify-center items-center text-lg w-10  h-10 hover:bg-green-500 hover:text-white transition-colors"
+                      onClick={() => {
+                        Dispatch(Increase(currentProduct.id));
+                      }}
+                    >
+                      +
+                    </button>
+                  )}
+              </div>
             </div>
           </div>
         </div>
@@ -101,7 +166,6 @@ const ProductDetail = () => {
             </p>
           </div>
         </div>
-        
       </div>
     </div>
   );

@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import icons from "../assets/icons/icons";
 import { navbarScrollController } from "./helpers/funtion";
+import { UseSelector, useSelector } from "react-redux";
+
 const Navbar = () => {
   const [showStatus, setshowStatus] = useState({
     shop: false,
@@ -9,6 +11,7 @@ const Navbar = () => {
     search: false,
   });
   const [burgorMenu, setburgorMenu] = useState(false);
+  const state = useSelector((state) => state.shoppingcart);
 
   const searchInp = useRef();
   useEffect(() => {
@@ -27,7 +30,7 @@ const Navbar = () => {
         }}
       ></div>
       {/* Burgor Menu */}
-      <div className="w-52 md:hidden block z-[111]">
+      <div className="w-52 md:hidden block z-[115]">
         <div
           className={`w-7 h-4 flex flex-col cursor-pointer relative origin-center`}
           onClick={() => {
@@ -195,7 +198,14 @@ const Navbar = () => {
           {icons.accountsIcon}
         </Link>
         {/* Shopping Cart Link */}
-        <Link to="/shoppingcart">{icons.shoppingCartIcon}</Link>
+        <Link to="/shoppingcart" className="relative">
+          <span>{icons.shoppingCartIcon}</span>
+          {state.itemsCounter > 0 && (
+            <span className="absolute top-0 right-[-50%] bg-red-500 text-white rounded-full text-[0.8rem] flex items-center justify-center min-w-[18px] min-h-[18px]">
+              {state.itemsCounter > 99 ? 99 : state.itemsCounter}
+            </span>
+          )}
+        </Link>
       </div>
     </nav>
   );

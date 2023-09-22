@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { AddItem } from "../../features/shoppingCartSlice/shoppingCartSlice";
+import { isInItems } from "../helpers/funtion";
 const Card = ({ productData }) => {
+  const state = useSelector((state) => state.shoppingcart);
+  const Dispatch = useDispatch();
   return (
     <div className="h-fit flex flex-col lg:w-[300px] xs:w-[350px] w-full">
       <div className="CcardImgContainer w-full h-[450px] relative overflow-hidden">
@@ -15,9 +20,24 @@ const Card = ({ productData }) => {
           />
         </Link>
         <div className="absolute bottom-[-100%] transition-all flex w-full h-[30%]  justify-center items-center bg-gradient-to-t from-white to-transparent via-slate-50">
-          <span className=" py-2 px-4 border border-black rounded-md">
-            Add To Cart
-          </span>
+          {isInItems(state, productData.id) ? (
+            <button
+              className=" py-2 px-4 bg-green-600 text-white rounded-md"
+              disabled
+            >
+              Added To cart
+            </button>
+          ) : (
+            <button
+              className=" py-2 px-4 border border-black rounded-md hover:bg-black hover:text-white transition-colors duration-200"
+              onClick={() => {
+                Dispatch(AddItem(productData));
+                console.log(state);
+              }}
+            >
+              Add To Cart
+            </button>
+          )}
         </div>
       </div>
       <div className="flex justify-between">

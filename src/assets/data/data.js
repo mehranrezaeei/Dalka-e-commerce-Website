@@ -1,11 +1,34 @@
 import picMen1_1 from "../images/productsImage/Men/pic-man-1-1.jpg";
+import picMen1_2 from "../images/productsImage/Men/pic-man-1-2.jpg";
+import picMen1_3 from "../images/productsImage/Men/pic-man-1-3.jpg";
+
 import picMen2_1 from "../images/productsImage/Men/pic-man-2-1.jpg";
+import picMen2_2 from "../images/productsImage/Men/pic-man-2-2.jpg";
+import picMen2_3 from "../images/productsImage/Men/pic-man-2-3.jpg";
+
 import picMen3_1 from "../images/productsImage/Men/pic-man-3-1.jpg";
+import picMen3_2 from "../images/productsImage/Men/pic-man-3-2.jpg";
+import picMen3_3 from "../images/productsImage/Men/pic-man-3-3.jpg";
+
 import picMen4_1 from "../images/productsImage/Men/pic-man-4-1.jpg";
+import picMen4_2 from "../images/productsImage/Men/pic-man-4-2.jpg";
+import picMen4_3 from "../images/productsImage/Men/pic-man-4-3.jpg";
+
 import picMen5_1 from "../images/productsImage/Men/pic-man-5-1.jpg";
+import picMen5_2 from "../images/productsImage/Men/pic-man-5-2.jpg";
+import picMen5_3 from "../images/productsImage/Men/pic-man-5-3.jpg";
+
 import picMen6_1 from "../images/productsImage/Men/pic-man-6-1.jpg";
+import picMen6_2 from "../images/productsImage/Men/pic-man-6-2.jpg";
+import picMen6_3 from "../images/productsImage/Men/pic-man-6-3.jpg";
+
 import picMen7_1 from "../images/productsImage/Men/pic-man-7-1.jpg";
+import picMen7_2 from "../images/productsImage/Men/pic-man-7-2.jpg";
+import picMen7_3 from "../images/productsImage/Men/pic-man-7-3.jpg";
+
 import picMen8_1 from "../images/productsImage/Men/pic-man-8-1.jpg";
+import picMen8_2 from "../images/productsImage/Men/pic-man-8-2.jpg";
+import picMen8_3 from "../images/productsImage/Men/pic-man-8-3.jpg";
 
 export const footerData = [
   ["Services", "Men", "Women", "Kids"],
@@ -25,10 +48,7 @@ export const ProductsData = {
       productSize: ["2xl", "xl", "lg", "m"],
       productImages: {
         main: picMen1_1,
-        otherImages: [
-          "https://static.zara.net/photos///2023/I/0/2/p/1538/323/800/2/w/750/1538323800_6_1_1.jpg?ts=1694675781992",
-          "https://static.zara.net/photos///2023/I/0/2/p/1538/323/800/2/w/750/1538323800_6_2_1.jpg?ts=1694675782168",
-        ],
+        otherImages: [picMen1_2, picMen1_3],
       },
       description:
         "Denim jacket lined with faux shearling. Lapel collar and long sleeves with buttoned cuffs. Flap pockets on the chest and hip welt pockets. Faded effect. Button-up front.",
@@ -43,7 +63,7 @@ export const ProductsData = {
       productSize: ["2xl", "sm", "lg", "m"],
       productImages: {
         main: picMen2_1,
-        otherImages: [],
+        otherImages: [picMen2_2, picMen2_3],
       },
       description:
         "Varsity jacket with a hood in the collar. Long sleeves with elasticated cuffs. Jetted pockets at the hip and inside pocket detail. Contrast patches and embroidery on the front and back. Ribbed trims. Snap-button front.",
@@ -58,7 +78,7 @@ export const ProductsData = {
       productSize: ["2xl", "sm", "lg", "m"],
       productImages: {
         main: picMen3_1,
-        otherImages: [],
+        otherImages: [picMen3_2, picMen3_3],
       },
       description:
         "Jacket made of faux leather fabric. Lapel collar with snap-button details. Long sleeves with zip cuffs. Front zip pockets on the chest and hip. Inside pocket. Asymmetric metal zip-up front.",
@@ -73,7 +93,7 @@ export const ProductsData = {
       productSize: ["2xl", "sm", "lg", "m"],
       productImages: {
         main: picMen5_1,
-        otherImages: [],
+        otherImages: [picMen5_2, picMen5_3],
       },
       description:
         "Loose-fitting faded sweatshirt with a high neck and front zip fastening. Long sleeves. Contrast prints on the front and back. Ribbed trims.",
@@ -88,7 +108,7 @@ export const ProductsData = {
       productSize: ["2xl", "sm", "lg", "m"],
       productImages: {
         main: picMen4_1,
-        otherImages: [],
+        otherImages: [picMen4_2, picMen4_3],
       },
       description:
         "Round neck sweatshirt with long sleeves. Contrast embroidery on the front and back. Ribbed trims.",
@@ -103,7 +123,7 @@ export const ProductsData = {
       productSize: ["2xl", "sm", "lg", "m"],
       productImages: {
         main: picMen6_1,
-        otherImages: [],
+        otherImages: [picMen6_2, picMen6_3],
       },
       description:
         "Slim fit jeans. Five pockets. Faded effect. Front zip fly and button fastening.",
@@ -118,7 +138,7 @@ export const ProductsData = {
       productSize: ["2xl", "sm", "lg", "m"],
       productImages: {
         main: picMen7_1,
-        otherImages: [],
+        otherImages: [picMen7_2, picMen7_3],
       },
       description:
         "Skinny fit jeans. Five pockets. Faded and ripped effect on the legs. Front zip fly and button fastening.",
@@ -133,7 +153,7 @@ export const ProductsData = {
       productSize: ["2xl", "sm", "lg", "m"],
       productImages: {
         main: picMen8_1,
-        otherImages: [],
+        otherImages: [picMen8_2, picMen8_3],
       },
       description:
         "T-shirt with a round neck and short sleeves. Contrast slogan print on the print.",
