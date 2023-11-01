@@ -14,7 +14,10 @@ const SectionTwo = () => {
           Up to 50% Off
         </h1>
         <div className="flex items-center flex-wrap gap-1">
-          <Link className="text-white bg-Cblue xs:p-3 p-2 rounded-full outline outline-3 hover:outline-Cblue hover:outline-offset-2 transition-all duration-300">
+          <Link
+            to="/products/bestsale"
+            className="text-white bg-Cblue xs:p-3 p-2 rounded-full outline outline-3 hover:outline-Cblue hover:outline-offset-2 transition-all duration-300"
+          >
             {icons.arrowUpRight}
           </Link>
         </div>

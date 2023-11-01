@@ -20,7 +20,7 @@
 
 @layer components {
   .Ccontainer {
-    @apply sm:px-14 px-6 max-[450px]:px-3;
+    @apply sm:px-14 px-6 max-[450px]:px-3 max-w-[1400px] mx-auto;
   }
   .Cheader {
     background-image: url("assets//images/dalka-logo.svg");
@@ -39,5 +39,27 @@
   }
   .CcardImgContainer:hover div:nth-child(2) {
     @apply bottom-0;
+  }
+  .Ccolorscheck:checked + .CcolorsLable:after {
+    @apply absolute top-[50%] translate-y-[-50%] text-white left-0 content-[''] w-full h-4;
+    background-image: url("./assets/icons/checkIcon.svg");
+    background-position: center;
+    background-size: cover;
+  }
+  .CpricerangeInp::-webkit-outer-spin-button,
+  .CpricerangeInp::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+  }
+  .CrangeInp {
+    -webkit-appearance: none;
+  }
+  .CrangeInp::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    @apply bg-Cblue h-4 w-4 mt-[-1px] rounded-full pointer-events-auto;
+  }
+  .CrangeInp::-moz-range-thumb {
+    -moz-appearance: none;
+    @apply bg-Cblue h-4 w-4 mt-[-1px] rounded-full pointer-events-auto;
   }
 }

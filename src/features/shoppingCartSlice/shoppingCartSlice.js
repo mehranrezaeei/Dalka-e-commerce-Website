@@ -4,15 +4,18 @@ const initialState = {
   itemsCounter: 0,
   selectedItems: [],
   total: 0,
-  CheckOut: false,
+  checkout: false,
 };
 
 const itemsCount = (state) => {
   let itemsCounter = 0;
-  state.selectedItems.map((item) => {
-    itemsCounter += item.quantity;
-  });
+  state.selectedItems.map((item) => (itemsCounter += item.quantity));
   return itemsCounter;
+};
+const totalCount = (state) => {
+  let result = 0;
+  state.selectedItems.map((item) => (result += item.price * item.quantity));
+  return result;
 };
 
 const ShoppingCartSlice = createSlice({
@@ -24,6 +27,7 @@ const ShoppingCartSlice = createSlice({
         state.selectedItems.push({ ...action.payload, quantity: 1 });
         state.itemsCounter = itemsCount(state);
       }
+      state.total = totalCount(state);
     },
     RemoveItem(state, action) {
       const newSelectedItems = state.selectedItems.filter(
@@ -31,6 +35,7 @@ const ShoppingCartSlice = createSlice({
       );
       state.selectedItems = newSelectedItems;
       state.itemsCounter = itemsCount(state);
+      state.total = totalCount(state);
     },
     Increase(state, action) {
       const indexI = state.selectedItems.findIndex(
@@ -38,6 +43,7 @@ const ShoppingCartSlice = createSlice({
       );
       state.selectedItems[indexI].quantity += 1;
       state.itemsCounter = itemsCount(state);
+      state.total = totalCount(state);
     },
     Decrease(state, action) {
       const indexD = state.selectedItems.findIndex(
@@ -45,13 +51,14 @@ const ShoppingCartSlice = createSlice({
       );
       state.selectedItems[indexD].quantity -= 1;
       state.itemsCounter = itemsCount(state);
+      state.total = totalCount(state);
     },
-    CheckOut(state, action) {
+    Checkout(state, action) {
       return {
         itemsCounter: 0,
         selectedItems: [],
         total: 0,
-        CheckOut: true,
+        checkout: false,
       };
     },
     Clear(state, action) {
@@ -59,11 +66,11 @@ const ShoppingCartSlice = createSlice({
         itemsCounter: 0,
         selectedItems: [],
         total: 0,
-        CheckOut: false,
+        checkout: false,
       };
     },
   },
 });
 export default ShoppingCartSlice.reducer;
-export const { AddItem, RemoveItem, Increase, Decrease, CheckOut, Clear } =
+export const { AddItem, RemoveItem, Increase, Decrease, Checkout, Clear } =
   ShoppingCartSlice.actions;
